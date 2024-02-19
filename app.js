@@ -47,3 +47,11 @@ data.products.forEach(Product => {
         li.textContent = `${ProductName}: ${quantity}`;
         ProductsItemsContainer.appendChild(li);
     });
+    // Update the count element to display the number of unique items in the Products
+    document.getElementById('count').style.display = 'flex'; // Assuming you're using flexbox
+    document.getElementById('count').innerText = Object.keys(Products).length;
+  }
+})
+.catch(error => {
+    console.error("Error fetching products:", error);
+  });
