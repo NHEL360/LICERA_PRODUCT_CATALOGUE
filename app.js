@@ -55,3 +55,18 @@ data.products.forEach(Product => {
 .catch(error => {
     console.error("Error fetching products:", error);
   });
+  const ProductsLink = document.querySelector('.cart');
+  const ProductsItems = document.getElementById('cart-items');
+
+  // Prevent default behavior on click
+ProductsLink.addEventListener('click', function(event) {
+event.preventDefault();
+
+// Toggle display of ProductsItems
+if (ProductsItems.style.display === 'none') {
+   ProductsItems.style.display = 'flex';
+} else {
+   ProductsItems.style.display = 'none';
+}
+});
+});
