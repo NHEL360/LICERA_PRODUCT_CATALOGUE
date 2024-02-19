@@ -37,3 +37,13 @@ data.products.forEach(Product => {
         updateProductsDisplay();
       }
     });
+    // Function to update the Products display
+    function updateProductsDisplay() {
+        ProductsItemsContainer.innerHTML = "";
+
+      Object.keys(Products).forEach(ProductName => {
+        const quantity = Products[ProductName];
+        const li = document.createElement("li");
+        li.textContent = `${ProductName}: ${quantity}`;
+        ProductsItemsContainer.appendChild(li);
+    });
