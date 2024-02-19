@@ -25,3 +25,15 @@ data.products.forEach(Product => {
   `;
     ProductCardsContainer.appendChild(card);
   });
+  // Event listener for Add to Cart buttons
+  ProductCardsContainer.addEventListener("click", function(event) {
+    if (event.target.classList.contains("add-to-cart")) {
+        const ProductName = event.target.getAttribute("data-product");
+        if (Products[ProductName]) {
+            Products[ProductName]++;
+        } else {
+            Products[ProductName] = 1;
+        }
+        updateProductsDisplay();
+      }
+    });
